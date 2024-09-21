@@ -1,0 +1,9 @@
+image: Ubuntu  # образ для сборки
+stack: jdk 11  # версия JDK
+branches:
+  only:
+    - master  # ветка git
+build: off  # будем использовать свой скрипт сборки
+build_script:
+  - chmod +x gradlew
+    - ./gradlew test --info -Dselenide.headless=true # запускаем тест, флаг --info позволяет выводить больше информации
